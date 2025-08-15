@@ -10,9 +10,9 @@ Pull the repo with `git clone` and open the folder with Godot 4.4.1.
 
 ## Credits
 
-- **Flo** for creating art assets
-- **Paulrdy** for programming
-- **Timm638** for programming
+- **[Flo](https://github.com/FlowLightGames)** for creating art assets
+- **[Paulrdy](https://github.com/PaulRdi)** for programming
+- **[Timm638](https://github.com/Timm638)** for programming
 
 - **Kenney** for [both pixel fonts](https://kenney.nl/assets/kenney-fonts)
 - **[The other participants at the game jam](https://itch.io/jam/summer-game-jam-regensburg-2025/entries)** for playtesting our game!
