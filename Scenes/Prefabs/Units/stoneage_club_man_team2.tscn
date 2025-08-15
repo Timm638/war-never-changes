@@ -1,0 +1,28 @@
+[gd_scene load_steps=6 format=3 uid="uid://dhag8x7sm2blr"]
+
+[ext_resource type="PackedScene" uid="uid://dt5k578j6xqvr" path="res://Scenes/Prefabs/unit_base.tscn" id="1_m3n8g"]
+[ext_resource type="Texture2D" uid="uid://b0fvev5b6w008" path="res://Sprites/Placeholder/spire-fireball.png" id="2_m3n8g"]
+[ext_resource type="Script" uid="uid://daxxrpgr4e0bg" path="res://Scripts/batallion_move.gd" id="3_ylebp"]
+[ext_resource type="Script" uid="uid://kdqtum7hd74g" path="res://Scripts/melee_attack.gd" id="4_5pexq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uk64"]
+
+[node name="Club_Man" instance=ExtResource("1_m3n8g")]
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_m3n8g")
+
+[node name="BatallionMove" type="Node2D" parent="." index="2"]
+script = ExtResource("3_ylebp")
+metadata/_custom_type_script = "uid://daxxrpgr4e0bg"
+
+[node name="MeleeAttack" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 32769
+monitoring = false
+monitorable = false
+script = ExtResource("4_5pexq")
+metadata/_custom_type_script = "uid://kdqtum7hd74g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttack" index="0"]
+shape = SubResource("CircleShape2D_1uk64")

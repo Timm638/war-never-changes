@@ -1,0 +1,36 @@
+[gd_scene load_steps=7 format=3 uid="uid://s1bgqec016v4"]
+
+[ext_resource type="Script" uid="uid://lf5c60doewsy" path="res://Scripts/Power/fireball_target.gd" id="1_kgy7o"]
+[ext_resource type="Texture2D" uid="uid://0jhnek886vjs" path="res://Sprites/Placeholder/spire-fireball-target.png" id="2_hxtge"]
+[ext_resource type="PackedScene" uid="uid://du7i6n6c5baag" path="res://Scenes/Prefabs/Powers/fireball.tscn" id="2_nv8qv"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b8m0t"]
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_wh5bq"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_hxtge"]
+
+[node name="Fireball" type="Area2D"]
+monitorable = false
+script = ExtResource("1_kgy7o")
+prefabToSpawn = ExtResource("2_nv8qv")
+count = 3
+positionVariance = 100.0
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="."]
+modulate = Color(0.0507812, 0.0362356, 0.00178528, 1)
+material = SubResource("CanvasItemMaterial_b8m0t")
+scale = Vector2(256.29, 128)
+mesh = SubResource("SphereMesh_wh5bq")
+
+[node name="Fireball Target" type="Sprite2D" parent="."]
+visible = false
+position = Vector2(-1, -64)
+scale = Vector2(4, 4)
+texture = ExtResource("2_hxtge")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_hxtge")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

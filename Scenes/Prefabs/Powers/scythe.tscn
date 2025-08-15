@@ -1,0 +1,77 @@
+[gd_scene load_steps=9 format=3 uid="uid://cdhg5xo8jvceg"]
+
+[ext_resource type="Script" uid="uid://cao1bwp230px5" path="res://Scripts/Power/scythe.gd" id="1_4mp0n"]
+[ext_resource type="Texture2D" uid="uid://cje04yn2qtc5u" path="res://Sprites/UI/scythe.png" id="2_a4u3i"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b8m0t"]
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_wh5bq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_a4u3i"]
+radius = 8.0
+height = 32.0
+
+[sub_resource type="Animation" id="Animation_p7hr0"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [0.0]
+}
+
+[sub_resource type="Animation" id="Animation_a4u3i"]
+resource_name = "ScytheSwing"
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:rotation")
+tracks/0/interp = 2
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.133333, 0.5),
+"transitions": PackedFloat32Array(1, 1, 1),
+"update": 0,
+"values": [0.0, -2.51327, 0.0]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1wen"]
+_data = {
+&"RESET": SubResource("Animation_p7hr0"),
+&"ScytheSwing": SubResource("Animation_a4u3i")
+}
+
+[node name="Scythe" type="Area2D"]
+z_index = 1
+collision_mask = 49152
+monitorable = false
+script = ExtResource("1_4mp0n")
+damage = 9999.0
+
+[node name="Damage Shadow" type="MeshInstance2D" parent="."]
+modulate = Color(1, 1, 1, 0.152941)
+material = SubResource("CanvasItemMaterial_b8m0t")
+scale = Vector2(32, 15.982)
+mesh = SubResource("SphereMesh_wh5bq")
+
+[node name="Damage Area" type="CollisionShape2D" parent="."]
+rotation = 1.5708
+shape = SubResource("CapsuleShape2D_a4u3i")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+&"": SubResource("AnimationLibrary_w1wen")
+}
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(9, -9)
+texture = ExtResource("2_a4u3i")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

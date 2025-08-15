@@ -1,0 +1,13 @@
+[gd_scene load_steps=3 format=3 uid="uid://bn65g14vbowi4"]
+
+[ext_resource type="PackedScene" uid="uid://clvhxe68rp4nt" path="res://Scenes/Prefabs/Tests/test_unit.tscn" id="2_8od7v"]
+[ext_resource type="Script" uid="uid://vpt6b1qul80n" path="res://Scripts/Tests/test_unit_spawner.gd" id="2_qc4db"]
+
+[node name="Node2D" type="Node2D"]
+
+[node name="TestUnitSpawner" type="Node" parent="." node_paths=PackedStringArray("world")]
+script = ExtResource("2_qc4db")
+unit_prefab = ExtResource("2_8od7v")
+num_units = 5000
+world = NodePath("..")
+metadata/_custom_type_script = "uid://vpt6b1qul80n"

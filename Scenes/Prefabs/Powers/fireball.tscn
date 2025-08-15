@@ -1,0 +1,164 @@
+[gd_scene load_steps=25 format=3 uid="uid://du7i6n6c5baag"]
+
+[ext_resource type="Script" uid="uid://ufgh402x7fwc" path="res://Scripts/Power/fireball.gd" id="1_exuok"]
+[ext_resource type="Texture2D" uid="uid://33njf4ih7hyn" path="res://Sprites/Placeholder/sprite-piano.png" id="1_onqjq"]
+[ext_resource type="Texture2D" uid="uid://b56561rgfiv1d" path="res://Sprites/Placeholder/spire-grab-shadow.png" id="2_b8m0t"]
+[ext_resource type="Texture2D" uid="uid://dgcv0k0gl0x74" path="res://Sprites/VFX/smoke_part.png" id="2_wh5bq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exuok"]
+radius = 64.0
+height = 256.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b8m0t"]
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_wh5bq"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nn332"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_ff0li"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0514706, 1), 0.0, 0.0, 0, 0, Vector2(0.485294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_oypr0"]
+curve = SubResource("Curve_ff0li")
+
+[sub_resource type="Gradient" id="Gradient_x8mt7"]
+offsets = PackedFloat32Array(0, 0.209091, 0.327273, 0.490909, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.935059, 0.40625, 1, 0.871094, 0.562883, 0.234787, 1, 0.429688, 0.375977, 0.428848, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_swvsc"]
+gradient = SubResource("Gradient_x8mt7")
+
+[sub_resource type="Curve" id="Curve_c3gbm"]
+_limits = [0.0, 2.11236, 0.0, 1.0]
+_data = [Vector2(0, 1.1462), 0.0, 0.0, 0, 0, Vector2(0.228205, 1.71773), 0.0, 0.0, 0, 0, Vector2(1, 2.11236), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r4vc3"]
+curve = SubResource("Curve_c3gbm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h84tc"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 6.0
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, -98, 0)
+scale_min = 0.75
+scale_curve = SubResource("CurveTexture_r4vc3")
+color_ramp = SubResource("GradientTexture1D_swvsc")
+alpha_curve = SubResource("CurveTexture_oypr0")
+anim_speed_min = 4.0
+anim_speed_max = 4.0
+anim_offset_max = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n210v"]
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_tyfif"]
+
+[sub_resource type="Curve" id="Curve_nn332"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0514706, 1), 0.0, 0.0, 0, 0, Vector2(0.485294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ff0li"]
+curve = SubResource("Curve_nn332")
+
+[sub_resource type="Gradient" id="Gradient_oypr0"]
+offsets = PackedFloat32Array(0, 0.209091, 0.327273, 0.490909, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.935059, 0.40625, 1, 0.871094, 0.562883, 0.234787, 1, 0.429688, 0.375977, 0.428848, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x8mt7"]
+gradient = SubResource("Gradient_oypr0")
+
+[sub_resource type="Curve" id="Curve_swvsc"]
+_limits = [0.0, 2.11236, 0.0, 1.0]
+_data = [Vector2(0, 1.37659), 0.0, 0.0, 0, 0, Vector2(0.0882353, 1.73261), 0.0, 0.0, 0, 0, Vector2(0.852941, 2.11236), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_c3gbm"]
+curve = SubResource("Curve_swvsc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r4vc3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 16.0
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 64.0
+initial_velocity_max = 64.0
+gravity = Vector3(0, 0, 0)
+damping_min = 23.61
+damping_max = 23.61
+scale_min = 0.75
+scale_curve = SubResource("CurveTexture_c3gbm")
+color_ramp = SubResource("GradientTexture1D_x8mt7")
+alpha_curve = SubResource("CurveTexture_ff0li")
+anim_speed_min = 4.0
+anim_speed_max = 4.0
+anim_offset_max = 1.0
+
+[node name="Piano" type="Area2D" node_paths=PackedStringArray("damage_area_sprite", "sprite", "death_particles")]
+z_index = 1
+collision_layer = 0
+collision_mask = 49152
+monitorable = false
+script = ExtResource("1_exuok")
+damage = 333.0
+damage_area_sprite = NodePath("Damage Shadow")
+sprite = NodePath("SoEinFeuerball")
+death_particles = NodePath("GPUParticles2D")
+
+[node name="Piano" type="Sprite2D" parent="."]
+visible = false
+scale = Vector2(4, 4)
+texture = ExtResource("1_onqjq")
+
+[node name="Drop Shadow" type="Sprite2D" parent="."]
+visible = false
+texture = ExtResource("2_b8m0t")
+
+[node name="Damage Area" type="CollisionShape2D" parent="."]
+visible = false
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_exuok")
+
+[node name="Damage Shadow" type="MeshInstance2D" parent="."]
+modulate = Color(0.0507812, 0.0362356, 0.00178528, 1)
+material = SubResource("CanvasItemMaterial_b8m0t")
+scale = Vector2(256.29, 128)
+mesh = SubResource("SphereMesh_wh5bq")
+
+[node name="SoEinFeuerball" type="GPUParticles2D" parent="."]
+z_index = 1
+material = SubResource("CanvasItemMaterial_nn332")
+amount = 64
+texture = ExtResource("2_wh5bq")
+lifetime = 1.5
+preprocess = 4.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_h84tc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="SoEinFeuerball"]
+self_modulate = Color(0.257812, 0.257812, 0.257812, 1)
+material = SubResource("CanvasItemMaterial_n210v")
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(16.5119, 16.505)
+mesh = SubResource("SphereMesh_tyfif")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="."]
+z_index = 1
+material = SubResource("CanvasItemMaterial_nn332")
+emitting = false
+amount = 64
+texture = ExtResource("2_wh5bq")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_r4vc3")

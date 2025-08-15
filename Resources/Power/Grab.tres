@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Power" load_steps=5 format=3 uid="uid://bjkpdpb0tboj5"]
+
+[ext_resource type="Texture2D" uid="uid://41despp5en0m" path="res://Sprites/UI/grab.png" id="1_m7aih"]
+[ext_resource type="PackedScene" uid="uid://d3vy5jp1h4kf1" path="res://Scenes/Prefabs/Powers/grab_shadow.tscn" id="2_eu1sv"]
+[ext_resource type="Script" uid="uid://uamsevl1l2qn" path="res://Scripts/DataType/Power.gd" id="3_gdma3"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_m7aih"]
+device = -1
+keycode = 50
+unicode = 50
+
+[resource]
+script = ExtResource("3_gdma3")
+name = "Grab"
+cost = 30
+icon = ExtResource("1_m7aih")
+prefab = ExtResource("2_eu1sv")
+continuous = true
+hotkey = SubResource("InputEventKey_m7aih")
+metadata/_custom_type_script = "uid://uamsevl1l2qn"

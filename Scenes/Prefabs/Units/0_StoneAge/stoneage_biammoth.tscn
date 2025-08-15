@@ -1,0 +1,45 @@
+[gd_scene load_steps=7 format=3 uid="uid://bjn2s0thfu6qy"]
+
+[ext_resource type="PackedScene" uid="uid://dt5k578j6xqvr" path="res://Scenes/Prefabs/unit_base.tscn" id="1_uxsx4"]
+[ext_resource type="Texture2D" uid="uid://dv0plkjjxsrb6" path="res://Sprites/units/large_units.png" id="2_crxca"]
+[ext_resource type="Script" uid="uid://daxxrpgr4e0bg" path="res://Scripts/batallion_move.gd" id="3_roc0x"]
+[ext_resource type="Script" uid="uid://kdqtum7hd74g" path="res://Scripts/melee_attack.gd" id="4_8cj4v"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uk64"]
+radius = 24.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wll7q"]
+radius = 12.0
+
+[node name="Mammoth" instance=ExtResource("1_uxsx4")]
+max_hp = 25
+
+[node name="Sprite2D" parent="." index="1"]
+texture = ExtResource("2_crxca")
+hframes = 3
+region_rect = Rect2(0, 0, 96, 32)
+
+[node name="BatallionMove" type="Node2D" parent="." index="2"]
+script = ExtResource("3_roc0x")
+speed = 45.0
+metadata/_custom_type_script = "uid://daxxrpgr4e0bg"
+
+[node name="MeleeAttack" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 32769
+monitoring = false
+script = ExtResource("4_8cj4v")
+attack_interval = 1.0
+metadata/_custom_type_script = "uid://kdqtum7hd74g"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="MeleeAttack" index="0"]
+shape = SubResource("CircleShape2D_1uk64")
+
+[node name="Area2D" parent="." index="4"]
+collision_mask = 32769
+
+[node name="CollisionShape2D" parent="Area2D" index="0"]
+shape = SubResource("CircleShape2D_wll7q")
+
+[node name="AnimationPlayer" parent="." index="5"]
+speed_scale = 0.5

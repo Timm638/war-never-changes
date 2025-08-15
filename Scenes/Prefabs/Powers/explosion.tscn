@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://gm0tda117qmq"]
+
+[ext_resource type="Script" uid="uid://dymg5ork1i04d" path="res://Scripts/Power/explosion.gd" id="1_h1g86"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_exuok"]
+resource_local_to_scene = true
+radius = 16.0
+height = 54.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_b8m0t"]
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_wh5bq"]
+
+[node name="Explosion" type="Area2D" groups=["No Shake"]]
+z_index = 1
+collision_mask = 49152
+monitorable = false
+script = ExtResource("1_h1g86")
+damage = 999.0
+
+[node name="Damage Area" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_exuok")
+
+[node name="Damage Shadow" type="MeshInstance2D" parent="."]
+modulate = Color(0.0507812, 0.0362356, 0.00178528, 1)
+material = SubResource("CanvasItemMaterial_b8m0t")
+scale = Vector2(50, 24.973)
+mesh = SubResource("SphereMesh_wh5bq")

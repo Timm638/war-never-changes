@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Power" load_steps=5 format=3 uid="uid://by0i01uy7ywye"]
+
+[ext_resource type="Texture2D" uid="uid://cje04yn2qtc5u" path="res://Sprites/UI/scythe.png" id="1_cljwu"]
+[ext_resource type="PackedScene" uid="uid://cdhg5xo8jvceg" path="res://Scenes/Prefabs/Powers/scythe.tscn" id="2_n3efh"]
+[ext_resource type="Script" uid="uid://uamsevl1l2qn" path="res://Scripts/DataType/Power.gd" id="3_ae6ss"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_cljwu"]
+device = -1
+keycode = 51
+unicode = 51
+
+[resource]
+script = ExtResource("3_ae6ss")
+name = "Scythe"
+cost = 0
+icon = ExtResource("1_cljwu")
+prefab = ExtResource("2_n3efh")
+continuous = true
+hotkey = SubResource("InputEventKey_cljwu")
+metadata/_custom_type_script = "uid://uamsevl1l2qn"

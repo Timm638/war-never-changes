@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Power" load_steps=5 format=3 uid="uid://b8y6d0a2hv1wx"]
+
+[ext_resource type="Texture2D" uid="uid://c8rjllv1nfogl" path="res://Sprites/Placeholder/Sprite-Souls.png" id="1_vi4yc"]
+[ext_resource type="PackedScene" uid="uid://bpiyqw72l5s6y" path="res://Scenes/Prefabs/Powers/worldender.tscn" id="2_jpxvf"]
+[ext_resource type="Script" uid="uid://uamsevl1l2qn" path="res://Scripts/DataType/Power.gd" id="3_cc5ab"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_vi4yc"]
+device = -1
+keycode = 52
+unicode = 52
+
+[resource]
+script = ExtResource("3_cc5ab")
+name = "WorldEnder"
+cost = 2000
+icon = ExtResource("1_vi4yc")
+prefab = ExtResource("2_jpxvf")
+continuous = false
+hotkey = SubResource("InputEventKey_vi4yc")
+metadata/_custom_type_script = "uid://uamsevl1l2qn"

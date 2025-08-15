@@ -1,0 +1,308 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxwraxr3ckay2"]
+
+[ext_resource type="Script" uid="uid://cerav62bc0qmd" path="res://Scripts/end_screen.gd" id="1_bhpww"]
+[ext_resource type="Theme" uid="uid://hc856ysfjyfa" path="res://Theme/theme_theme.tres" id="2_bhpww"]
+[ext_resource type="Theme" uid="uid://b101ksgb5kiq0" path="res://Theme/end_theme.tres" id="2_gdxnu"]
+[ext_resource type="Theme" uid="uid://doxtc6moehol7" path="res://Theme/stats_theme.tres" id="4_gdxnu"]
+[ext_resource type="Theme" uid="uid://0a8qos6vodl2" path="res://Theme/stats_number_theme.tres" id="5_8yanq"]
+
+[node name="EndScreen" type="CanvasLayer"]
+script = ExtResource("1_bhpww")
+main_game = "uid://dud7yswqhupih"
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 3
+size_flags_vertical = 3
+theme = ExtResource("2_gdxnu")
+metadata/_edit_use_anchors_ = true
+
+[node name="LogoContainer" type="MarginContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/LogoContainer"]
+custom_minimum_size = Vector2(32, 32)
+layout_mode = 2
+theme = ExtResource("2_bhpww")
+bbcode_enabled = true
+text = "The war has ended.
+[font_size=12]Your contributions will be tallied...[/font_size]"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="StatsContainer" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("4_gdxnu")
+alignment = 1
+
+[node name="VBoxContainer" type="VBoxContainer" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+alignment = 1
+
+[node name="TimeContainer" type="HBoxContainer" parent="VBoxContainer/StatsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/TimeContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/TimeContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "War duration:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank2" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/TimeContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="WarDuration" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/TimeContainer/Rank2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "12:00
+"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/TimeContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("5_8yanq")
+
+[node name="DurationRank" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/TimeContainer/Rank"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container" type="Container" parent="VBoxContainer/StatsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="SoulsContainer" type="HBoxContainer" parent="VBoxContainer/StatsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/SoulsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/SoulsContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "souls gathered:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank2" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/SoulsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="SoulCount" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/SoulsContainer/Rank2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1220"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/SoulsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("5_8yanq")
+
+[node name="SoulRank" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/SoulsContainer/Rank"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container2" type="Container" parent="VBoxContainer/StatsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="SkillsContainer" type="HBoxContainer" parent="VBoxContainer/StatsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+
+[node name="Panel" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/SkillsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/SkillsContainer/Panel"]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "Skills used:"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank2" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/SkillsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+
+[node name="SkillsUsed" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/SkillsContainer/Rank2"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "1220"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Rank" type="Panel" parent="VBoxContainer/StatsContainer/VBoxContainer/SkillsContainer"]
+custom_minimum_size = Vector2(100, 0)
+layout_mode = 2
+theme = ExtResource("5_8yanq")
+
+[node name="SkillRank" type="RichTextLabel" parent="VBoxContainer/StatsContainer/VBoxContainer/SkillsContainer/Rank"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+text = "S"
+horizontal_alignment = 1
+vertical_alignment = 1
+
+[node name="Container3" type="Container" parent="VBoxContainer/StatsContainer/VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+
+[node name="MarginContainer" type="MarginContainer" parent="VBoxContainer/StatsContainer"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 0.66
+
+[node name="Panel" type="Panel" parent="VBoxContainer/StatsContainer/MarginContainer"]
+layout_mode = 2
+
+[node name="OverallRank" type="RichTextLabel" parent="VBoxContainer/StatsContainer/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = 36.0
+offset_top = -40.0
+offset_right = -1.0
+offset_bottom = -30.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_font_sizes/normal_font_size = 400
+bbcode_enabled = true
+text = "S"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="SubText" type="RichTextLabel" parent="VBoxContainer/StatsContainer/MarginContainer/Panel"]
+unique_name_in_owner = true
+layout_mode = 1
+anchors_preset = 12
+anchor_top = 1.0
+anchor_right = 1.0
+anchor_bottom = 1.0
+offset_left = -1.0
+offset_top = -64.0
+offset_right = -1.0
+offset_bottom = 33.0
+grow_horizontal = 2
+grow_vertical = 0
+size_flags_vertical = 3
+size_flags_stretch_ratio = 0.2
+theme_override_font_sizes/normal_font_size = 42
+text = "The reaper"
+fit_content = true
+scroll_active = false
+horizontal_alignment = 1
+
+[node name="StartButton" type="HBoxContainer" parent="VBoxContainer"]
+layout_mode = 2
+size_flags_vertical = 3
+alignment = 1
+
+[node name="RichTextLabel2" type="RichTextLabel" parent="VBoxContainer/StartButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/outline_size = 2
+theme_override_font_sizes/normal_font_size = 20
+text = "
+"
+horizontal_alignment = 1
+
+[node name="PanelContainer" type="MarginContainer" parent="VBoxContainer/StartButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 3.0
+theme = ExtResource("2_bhpww")
+
+[node name="Button" type="Button" parent="VBoxContainer/StartButton/PanelContainer"]
+layout_mode = 2
+text = "Start another War"
+
+[node name="RichTextLabel" type="RichTextLabel" parent="VBoxContainer/StartButton"]
+layout_mode = 2
+size_flags_horizontal = 3
+size_flags_stretch_ratio = 2.0
+theme_override_constants/outline_size = 2
+theme_override_constants/shadow_offset_y = 0
+theme_override_font_sizes/normal_font_size = 20
+bbcode_enabled = true
+text = "
+"
+horizontal_alignment = 1
+
+[connection signal="pressed" from="VBoxContainer/StartButton/PanelContainer/Button" to="." method="restart_game"]

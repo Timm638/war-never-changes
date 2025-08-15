@@ -1,0 +1,17 @@
+[gd_resource type="Resource" script_class="ActorSettings" load_steps=4 format=3 uid="uid://cho2lumjubng6"]
+
+[ext_resource type="Script" uid="uid://ds443khri5rbw" path="res://Scripts/DataType/actor_settings.gd" id="1_u8lua"]
+[ext_resource type="PackedScene" uid="uid://08jm4vaegj30" path="res://Scenes/Prefabs/Units/0_StoneAge/stoneage_club_man.tscn" id="2_8560m"]
+[ext_resource type="PackedScene" uid="uid://87pxv18vclv0" path="res://Scenes/Prefabs/Units/0_StoneAge/stoneage_spearguy.tscn" id="3_kxgp5"]
+
+[resource]
+script = ExtResource("1_u8lua")
+unit_type_bag = Array[PackedScene]([ExtResource("2_8560m"), ExtResource("3_kxgp5")])
+max_units = 2500
+batallion_size = 1
+batallion_spawn_interval = 5.0
+unit_spawn_interval = 0.05
+spawnpoint_diameter = 20.0
+spawn_radius = 100.0
+ai_update_interval = 1.0
+metadata/_custom_type_script = "uid://ds443khri5rbw"

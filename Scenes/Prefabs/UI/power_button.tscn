@@ -1,0 +1,87 @@
+[gd_scene load_steps=8 format=3 uid="uid://cbo3d6l6qelcx"]
+
+[ext_resource type="Texture2D" uid="uid://cdjlehs1cqfp5" path="res://Sprites/UI/style_box_low_yellow.png" id="1_evwbg"]
+[ext_resource type="Texture2D" uid="uid://dj1nbsqq7fbq1" path="res://Sprites/UI/style_box_low.png" id="1_f61xk"]
+[ext_resource type="Script" uid="uid://dl7r6snfoigab" path="res://Scenes/Prefabs/UI/power_button.gd" id="2_bdsuc"]
+[ext_resource type="Theme" uid="uid://olxxpw7dh7ou" path="res://Theme/toolbar_theme.tres" id="2_f61xk"]
+[ext_resource type="Texture2D" uid="uid://dv4x6g7dns1c3" path="res://Sprites/UI/fireball.png" id="3_f61xk"]
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_wfib7"]
+texture = ExtResource("1_evwbg")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[sub_resource type="StyleBoxTexture" id="StyleBoxTexture_bdsuc"]
+texture = ExtResource("1_f61xk")
+texture_margin_left = 14.0
+texture_margin_top = 14.0
+texture_margin_right = 14.0
+texture_margin_bottom = 14.0
+
+[node name="Button" type="Button" node_paths=PackedStringArray("b_icon")]
+custom_minimum_size = Vector2(100, 100)
+offset_right = 64.0
+offset_bottom = 64.0
+size_flags_horizontal = 4
+size_flags_vertical = 4
+focus_mode = 0
+theme = ExtResource("2_f61xk")
+theme_override_styles/focus = SubResource("StyleBoxTexture_wfib7")
+theme_override_styles/disabled_mirrored = SubResource("StyleBoxTexture_bdsuc")
+theme_override_styles/disabled = SubResource("StyleBoxTexture_bdsuc")
+theme_override_styles/hover_pressed_mirrored = SubResource("StyleBoxTexture_wfib7")
+theme_override_styles/hover_pressed = SubResource("StyleBoxTexture_wfib7")
+theme_override_styles/hover_mirrored = SubResource("StyleBoxTexture_bdsuc")
+theme_override_styles/hover = SubResource("StyleBoxTexture_bdsuc")
+theme_override_styles/pressed_mirrored = SubResource("StyleBoxTexture_wfib7")
+theme_override_styles/pressed = SubResource("StyleBoxTexture_wfib7")
+theme_override_styles/normal_mirrored = SubResource("StyleBoxTexture_bdsuc")
+theme_override_styles/normal = SubResource("StyleBoxTexture_bdsuc")
+toggle_mode = true
+icon_alignment = 1
+script = ExtResource("2_bdsuc")
+b_icon = NodePath("CenterContainer/TextureRect")
+
+[node name="CostLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 1
+theme = ExtResource("2_f61xk")
+text = "111"
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="HotkeyLabel" type="RichTextLabel" parent="."]
+layout_mode = 1
+anchors_preset = 10
+anchor_right = 1.0
+offset_top = 2.0
+offset_bottom = 26.0
+grow_horizontal = 2
+mouse_filter = 1
+theme_override_colors/default_color = Color(0.288518, 0.288518, 0.288518, 1)
+theme_override_constants/outline_size = 0
+text = "1"
+fit_content = true
+horizontal_alignment = 1
+vertical_alignment = 2
+
+[node name="CenterContainer" type="CenterContainer" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+
+[node name="TextureRect" type="TextureRect" parent="CenterContainer"]
+custom_minimum_size = Vector2(48, 48)
+layout_mode = 2
+texture = ExtResource("3_f61xk")

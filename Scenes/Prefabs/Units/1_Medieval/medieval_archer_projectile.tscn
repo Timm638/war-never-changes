@@ -1,0 +1,20 @@
+[gd_scene load_steps=5 format=3 uid="uid://bv7588ffpbb7x"]
+
+[ext_resource type="Script" uid="uid://dscqrqglupwqx" path="res://Scripts/projectile_hitscan.gd" id="1_m1phf"]
+[ext_resource type="Curve" uid="uid://dfsy7gvidnw7q" path="res://Resources/Curves/SpearCurve.tres" id="2_5oju8"]
+[ext_resource type="Texture2D" uid="uid://cawrbtfrwhdhy" path="res://Sprites/weapons/weapons.png" id="3_fdkht"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_yqac1"]
+atlas = ExtResource("3_fdkht")
+region = Rect2(16, 48, 16, 16)
+
+[node name="ArrowProjectile" type="Node2D"]
+script = ExtResource("1_m1phf")
+damage = 5.0
+travel_duration = 0.75
+travel_arc = ExtResource("2_5oju8")
+cutoff_distance = 300.0
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = 1
+texture = SubResource("AtlasTexture_yqac1")

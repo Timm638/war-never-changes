@@ -1,0 +1,23 @@
+[gd_scene load_steps=5 format=3 uid="uid://c3wq7h26mf2kr"]
+
+[ext_resource type="Script" uid="uid://cx6ms0qepod38" path="res://Scripts/projectile_explosive.gd" id="1_esivc"]
+[ext_resource type="Curve" uid="uid://cwq34iclelx24" path="res://Resources/Curves/GrenadeCurve.tres" id="2_o6rih"]
+[ext_resource type="Texture2D" uid="uid://cawrbtfrwhdhy" path="res://Sprites/weapons/weapons.png" id="3_ov7es"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_e2ipk"]
+atlas = ExtResource("3_ov7es")
+region = Rect2(16, 80, 16, 16)
+
+[node name="Explosion" type="Node2D"]
+z_index = 1
+script = ExtResource("1_esivc")
+damage = 25.0
+damage_range = 5.0
+crater_size = 5.0
+crater_percentage = 0.75
+travel_arc = ExtResource("2_o6rih")
+cutoff_distance = 500.0
+interval = 0.01
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("AtlasTexture_e2ipk")

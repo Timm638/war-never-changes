@@ -1,0 +1,16 @@
+[gd_resource type="Resource" script_class="ActorSettings" load_steps=3 format=3 uid="uid://8w6120e57d8k"]
+
+[ext_resource type="Script" uid="uid://ds443khri5rbw" path="res://Scripts/DataType/actor_settings.gd" id="1_ntv8a"]
+[ext_resource type="PackedScene" uid="uid://cv3ei0s42fp7q" path="res://Scenes/Prefabs/Units/stoneage_club_man_team2.tscn" id="2_ntv8a"]
+
+[resource]
+script = ExtResource("1_ntv8a")
+unit_type_bag = Array[PackedScene]([ExtResource("2_ntv8a")])
+max_units = 2500
+batallion_size = 1
+batallion_spawn_interval = 999.0
+unit_spawn_interval = 0.05
+spawnpoint_diameter = 20.0
+spawn_radius = 100.0
+ai_update_interval = 1.0
+metadata/_custom_type_script = "uid://ds443khri5rbw"

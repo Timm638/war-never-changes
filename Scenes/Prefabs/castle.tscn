@@ -1,0 +1,54 @@
+[gd_scene load_steps=4 format=3 uid="uid://c4vep52nwvdhn"]
+
+[ext_resource type="Script" uid="uid://pd4y0byy4t4k" path="res://Scripts/castle.gd" id="1_r4ye6"]
+[ext_resource type="Texture2D" uid="uid://bpnq5xr74ej4" path="res://Sprites/environment/bases.png" id="2_r4ye6"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_r4ye6"]
+radius = 35.1
+
+[node name="Castle" type="Node2D" node_paths=PackedStringArray("hp_bar_fill")]
+script = ExtResource("1_r4ye6")
+hp_bar_fill = NodePath("HpBar/Fill")
+metadata/_custom_type_script = "uid://pd4y0byy4t4k"
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -24)
+texture = ExtResource("2_r4ye6")
+
+[node name="Area2D" type="Area2D" parent="."]
+collision_layer = 32768
+collision_mask = 0
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_r4ye6")
+
+[node name="HpBar" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -19.0
+offset_top = -54.0
+offset_right = 21.0
+offset_bottom = -14.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="BG" type="ColorRect" parent="HpBar"]
+layout_mode = 0
+offset_left = -5.0
+offset_top = -4.0
+offset_right = 43.0
+offset_bottom = 8.0
+color = Color(0, 0, 0, 1)
+
+[node name="Fill" type="ColorRect" parent="HpBar"]
+layout_mode = 0
+offset_left = -3.0
+offset_top = -2.0
+offset_right = 41.0
+offset_bottom = 6.0
+color = Color(0.930554, 0.765549, 0.222482, 1)

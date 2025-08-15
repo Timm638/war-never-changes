@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ActorSettings" load_steps=7 format=3 uid="uid://d8apkomcqpfe"]
+
+[ext_resource type="Texture2D" uid="uid://bpnq5xr74ej4" path="res://Sprites/environment/bases.png" id="1_spfdf"]
+[ext_resource type="PackedScene" uid="uid://08jm4vaegj30" path="res://Scenes/Prefabs/Units/0_StoneAge/stoneage_club_man.tscn" id="2_4kccx"]
+[ext_resource type="Script" uid="uid://ds443khri5rbw" path="res://Scripts/DataType/actor_settings.gd" id="2_vakp5"]
+[ext_resource type="PackedScene" uid="uid://87pxv18vclv0" path="res://Scenes/Prefabs/Units/0_StoneAge/stoneage_spearguy.tscn" id="3_spfdf"]
+[ext_resource type="PackedScene" uid="uid://bjn2s0thfu6qy" path="res://Scenes/Prefabs/Units/0_StoneAge/stoneage_biammoth.tscn" id="5_vakp5"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_17eh6"]
+atlas = ExtResource("1_spfdf")
+region = Rect2(0, 0, 48, 64)
+
+[resource]
+script = ExtResource("2_vakp5")
+unit_type_bag = Array[PackedScene]([ExtResource("2_4kccx"), ExtResource("3_spfdf"), ExtResource("5_vakp5"), ExtResource("2_4kccx"), ExtResource("3_spfdf"), ExtResource("2_4kccx")])
+max_units = 2500
+batallion_size = 3
+batallion_spawn_interval = 1.0
+unit_spawn_interval = 0.1
+spawnpoint_diameter = 20.0
+spawn_radius = 100.0
+ai_update_interval = 1.0
+base_txt = SubResource("AtlasTexture_17eh6")
+metadata/_custom_type_script = "uid://ds443khri5rbw"

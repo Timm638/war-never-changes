@@ -1,0 +1,30 @@
+[gd_scene load_steps=5 format=3 uid="uid://d3vy5jp1h4kf1"]
+
+[ext_resource type="Script" uid="uid://cvm0add8y7yve" path="res://Scripts/Power/grab_shadow.gd" id="1_pwwos"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_e45hv"]
+blend_mode = 2
+
+[sub_resource type="SphereMesh" id="SphereMesh_wh5bq"]
+
+[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_7ky84"]
+radius = 64.0
+height = 256.0
+
+[node name="GrabShadow" type="Area2D"]
+collision_layer = 65536
+collision_mask = 49152
+monitorable = false
+script = ExtResource("1_pwwos")
+
+[node name="Spire-grab-shadow" type="MeshInstance2D" parent="."]
+modulate = Color(0.0507812, 0.0362356, 0.00178528, 1)
+material = SubResource("CanvasItemMaterial_e45hv")
+scale = Vector2(256.29, 128)
+mesh = SubResource("SphereMesh_wh5bq")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+rotation = -1.5708
+shape = SubResource("CapsuleShape2D_7ky84")
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

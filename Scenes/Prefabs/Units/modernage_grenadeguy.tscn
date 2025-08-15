@@ -1,0 +1,35 @@
+[gd_scene load_steps=6 format=3 uid="uid://dxyoxw7jv1060"]
+
+[ext_resource type="PackedScene" uid="uid://dt5k578j6xqvr" path="res://Scenes/Prefabs/unit_base.tscn" id="1_jaeq5"]
+[ext_resource type="Script" uid="uid://daxxrpgr4e0bg" path="res://Scripts/batallion_move.gd" id="2_2tjrk"]
+[ext_resource type="Script" uid="uid://dc48tdo3onsfq" path="res://Scripts/ranged_attack_projectile.gd" id="3_23i2d"]
+[ext_resource type="PackedScene" uid="uid://c3wq7h26mf2kr" path="res://Scenes/Prefabs/Units/2_ModernAge/modernage_grenadeguy_projectile.tscn" id="4_vy6so"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wic18"]
+radius = 100.0
+
+[node name="GranadeGuy" instance=ExtResource("1_jaeq5")]
+
+[node name="Sprite2D" parent="." index="1"]
+region_rect = Rect2(0, 81, 64, 16)
+
+[node name="Weapon" parent="Sprite2D" index="1"]
+region_rect = Rect2(0, 81, 32, 16)
+
+[node name="BatallionMove" type="Node2D" parent="." index="2"]
+script = ExtResource("2_2tjrk")
+metadata/_custom_type_script = "uid://daxxrpgr4e0bg"
+
+[node name="RangedAttackProjectile" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 32769
+monitoring = false
+monitorable = false
+script = ExtResource("3_23i2d")
+projectile_prefab = ExtResource("4_vy6so")
+attack_range = 50.0
+metadata/_custom_type_script = "uid://dc48tdo3onsfq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedAttackProjectile" index="0"]
+position = Vector2(75, 0)
+shape = SubResource("CircleShape2D_wic18")

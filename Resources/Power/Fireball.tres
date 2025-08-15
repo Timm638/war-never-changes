@@ -1,0 +1,20 @@
+[gd_resource type="Resource" script_class="Power" load_steps=5 format=3 uid="uid://dui0gv1pm74gn"]
+
+[ext_resource type="Texture2D" uid="uid://dv4x6g7dns1c3" path="res://Sprites/UI/fireball.png" id="1_8e5y0"]
+[ext_resource type="PackedScene" uid="uid://s1bgqec016v4" path="res://Scenes/Prefabs/Powers/fireball_target.tscn" id="2_ukjfb"]
+[ext_resource type="Script" uid="uid://uamsevl1l2qn" path="res://Scripts/DataType/Power.gd" id="3_sc301"]
+
+[sub_resource type="InputEventKey" id="InputEventKey_8e5y0"]
+device = -1
+keycode = 49
+unicode = 49
+
+[resource]
+script = ExtResource("3_sc301")
+name = "Fireball"
+cost = 200
+icon = ExtResource("1_8e5y0")
+prefab = ExtResource("2_ukjfb")
+continuous = true
+hotkey = SubResource("InputEventKey_8e5y0")
+metadata/_custom_type_script = "uid://uamsevl1l2qn"

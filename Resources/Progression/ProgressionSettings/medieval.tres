@@ -1,0 +1,24 @@
+[gd_resource type="Resource" script_class="ActorSettings" load_steps=7 format=3 uid="uid://bk6elnakt3gk4"]
+
+[ext_resource type="Texture2D" uid="uid://bpnq5xr74ej4" path="res://Sprites/environment/bases.png" id="1_2j7w4"]
+[ext_resource type="Script" uid="uid://ds443khri5rbw" path="res://Scripts/DataType/actor_settings.gd" id="2_idbq5"]
+[ext_resource type="PackedScene" uid="uid://bet2w2as0h7jd" path="res://Scenes/Prefabs/Units/1_Medieval/medieval_knight.tscn" id="3_c7u60"]
+[ext_resource type="PackedScene" uid="uid://ccmn8100r4nlj" path="res://Scenes/Prefabs/Units/1_Medieval/medieval_archer.tscn" id="4_0eq15"]
+[ext_resource type="PackedScene" uid="uid://brpihstcnih36" path="res://Scenes/Prefabs/Units/1_Medieval/medieval_big_man.tscn" id="5_1scks"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c7u60"]
+atlas = ExtResource("1_2j7w4")
+region = Rect2(48, 0, 48, 64)
+
+[resource]
+script = ExtResource("2_idbq5")
+unit_type_bag = Array[PackedScene]([ExtResource("3_c7u60"), ExtResource("4_0eq15"), ExtResource("5_1scks"), ExtResource("4_0eq15"), ExtResource("3_c7u60"), ExtResource("3_c7u60")])
+max_units = 2500
+batallion_size = 5
+batallion_spawn_interval = 1.0
+unit_spawn_interval = 0.05
+spawnpoint_diameter = 20.0
+spawn_radius = 100.0
+ai_update_interval = 1.0
+base_txt = SubResource("AtlasTexture_c7u60")
+metadata/_custom_type_script = "uid://ds443khri5rbw"

@@ -1,0 +1,49 @@
+[gd_scene load_steps=3 format=3 uid="uid://3wkmnamhg3yi"]
+
+[ext_resource type="Script" uid="uid://swl6lxfykhin" path="res://Scripts/audio_manager.gd" id="1_780kl"]
+[ext_resource type="AudioStream" uid="uid://bssiuar2q7h05" path="res://Audio/test_bgm.wav" id="1_e5mgc"]
+
+[node name="AudioStreamPlayer2D" type="Node"]
+script = ExtResource("1_780kl")
+metadata/_custom_type_script = "uid://swl6lxfykhin"
+
+[node name="BGM" type="AudioStreamPlayer2D" parent="."]
+stream = ExtResource("1_e5mgc")
+autoplay = true
+bus = &"Music"
+
+[node name="Sfx_1" type="Node" parent="."]
+
+[node name="channel_1" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_2" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_3" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_4" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_5" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_6" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_7" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="channel_8" type="AudioStreamPlayer2D" parent="Sfx_1"]
+
+[node name="Sfx_2" type="Node" parent="."]
+
+[node name="channel_1" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_2" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_3" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_4" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_5" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_6" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_7" type="AudioStreamPlayer2D" parent="Sfx_2"]
+
+[node name="channel_8" type="AudioStreamPlayer2D" parent="Sfx_2"]

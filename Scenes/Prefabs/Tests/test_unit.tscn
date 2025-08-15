@@ -1,0 +1,22 @@
+[gd_scene load_steps=4 format=3 uid="uid://clvhxe68rp4nt"]
+
+[ext_resource type="Texture2D" uid="uid://bxv8w2x4u14vk" path="res://Sprites/Placeholder/sprite-alpha.png" id="1_lovpx"]
+[ext_resource type="Script" uid="uid://bbxyb4p0locqw" path="res://Scripts/Tests/test_move.gd" id="2_80lvt"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_t3ncw"]
+
+[node name="Unit" type="Node2D"]
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+position = Vector2(0, -1)
+texture = ExtResource("1_lovpx")
+
+[node name="TestMove" type="Node2D" parent="."]
+script = ExtResource("2_80lvt")
+metadata/_custom_type_script = "uid://bbxyb4p0locqw"
+
+[node name="Area2D" type="Area2D" parent="."]
+monitoring = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_t3ncw")

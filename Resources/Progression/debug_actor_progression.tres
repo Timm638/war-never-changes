@@ -1,0 +1,15 @@
+[gd_resource type="Resource" script_class="ActorProgression" load_steps=6 format=3 uid="uid://cdm3b1b5unj4h"]
+
+[ext_resource type="Script" uid="uid://ncn8pk736dn5" path="res://Scripts/DataType/actor_progression.gd" id="1_kuqyx"]
+[ext_resource type="Script" uid="uid://ds443khri5rbw" path="res://Scripts/DataType/actor_settings.gd" id="2_j4asg"]
+[ext_resource type="Resource" uid="uid://bkt4lpvho1pbo" path="res://Resources/Progression/ProgressionSettings/debug_stone_age.tres" id="3_kuqyx"]
+[ext_resource type="Resource" uid="uid://bk6elnakt3gk4" path="res://Resources/Progression/ProgressionSettings/medieval.tres" id="4_vpmhq"]
+[ext_resource type="Resource" uid="uid://dx1t5cp2gjaxq" path="res://Resources/Progression/ProgressionSettings/modern.tres" id="5_cwv77"]
+
+[resource]
+script = ExtResource("1_kuqyx")
+settings_by_age = Array[ExtResource("2_j4asg")]([ExtResource("3_kuqyx"), ExtResource("4_vpmhq"), ExtResource("5_cwv77")])
+transition_probability = 1.0
+min_age_duration = 999.0
+age_transiton_interval = 3.0
+metadata/_custom_type_script = "uid://ncn8pk736dn5"

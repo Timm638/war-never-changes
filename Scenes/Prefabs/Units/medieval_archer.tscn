@@ -1,0 +1,34 @@
+[gd_scene load_steps=6 format=3 uid="uid://ben4l6an2qlb0"]
+
+[ext_resource type="PackedScene" uid="uid://dt5k578j6xqvr" path="res://Scenes/Prefabs/unit_base.tscn" id="1_shqj0"]
+[ext_resource type="Script" uid="uid://daxxrpgr4e0bg" path="res://Scripts/batallion_move.gd" id="2_emj0b"]
+[ext_resource type="Script" uid="uid://dc48tdo3onsfq" path="res://Scripts/ranged_attack_projectile.gd" id="3_i6sfn"]
+[ext_resource type="PackedScene" uid="uid://dphxamv4y86ba" path="res://Scenes/Prefabs/Units/medieval_archer_projectile.tscn" id="4_7o243"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_1uk64"]
+radius = 125.0
+
+[node name="Archer" instance=ExtResource("1_shqj0")]
+max_hp = 100
+
+[node name="Sprite2D" parent="." index="1"]
+region_rect = Rect2(0, 32, 64, 16)
+
+[node name="BatallionMove" type="Node2D" parent="." index="2"]
+script = ExtResource("2_emj0b")
+metadata/_custom_type_script = "uid://daxxrpgr4e0bg"
+
+[node name="RangedAttackProjectile" type="Area2D" parent="." index="3"]
+monitoring = false
+monitorable = false
+script = ExtResource("3_i6sfn")
+projectile_prefab = ExtResource("4_7o243")
+attack_range = 150.0
+metadata/_custom_type_script = "uid://dc48tdo3onsfq"
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedAttackProjectile" index="0"]
+position = Vector2(75, 0)
+shape = SubResource("CircleShape2D_1uk64")
+
+[node name="Area2D" parent="." index="4"]
+collision_mask = 32769

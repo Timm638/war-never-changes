@@ -1,0 +1,151 @@
+[gd_scene load_steps=22 format=3 uid="uid://bpiyqw72l5s6y"]
+
+[ext_resource type="Script" uid="uid://ce5tte75txjy6" path="res://Scripts/Power/worldender.gd" id="1_7q7bk"]
+[ext_resource type="Texture2D" uid="uid://dgcv0k0gl0x74" path="res://Sprites/VFX/smoke_part.png" id="4_p2tg3"]
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_worcg"]
+blend_mode = 1
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_nn332"]
+particles_animation = true
+particles_anim_h_frames = 3
+particles_anim_v_frames = 1
+particles_anim_loop = false
+
+[sub_resource type="Curve" id="Curve_ff0li"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0514706, 1), 0.0, 0.0, 0, 0, Vector2(0.485294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_oypr0"]
+curve = SubResource("Curve_ff0li")
+
+[sub_resource type="Gradient" id="Gradient_x8mt7"]
+offsets = PackedFloat32Array(0, 0.209091, 0.327273, 0.490909, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.935059, 0.40625, 1, 0.871094, 0.562883, 0.234787, 1, 0.429688, 0.375977, 0.428848, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_swvsc"]
+gradient = SubResource("Gradient_x8mt7")
+
+[sub_resource type="Curve" id="Curve_c3gbm"]
+_limits = [0.0, 2.11236, 0.0, 1.0]
+_data = [Vector2(0, 1.1462), 0.0, 0.0, 0, 0, Vector2(0.228205, 1.71773), 0.0, 0.0, 0, 0, Vector2(1, 2.11236), 0.0, 0.0, 0, 0]
+point_count = 3
+
+[sub_resource type="CurveTexture" id="CurveTexture_r4vc3"]
+curve = SubResource("Curve_c3gbm")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_h84tc"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 6.0
+angle_min = -720.0
+angle_max = 720.0
+gravity = Vector3(0, -98, 0)
+scale_min = 0.75
+scale_curve = SubResource("CurveTexture_r4vc3")
+color_ramp = SubResource("GradientTexture1D_swvsc")
+alpha_curve = SubResource("CurveTexture_oypr0")
+anim_speed_min = 4.0
+anim_speed_max = 4.0
+anim_offset_max = 1.0
+
+[sub_resource type="CanvasItemMaterial" id="CanvasItemMaterial_n210v"]
+blend_mode = 1
+
+[sub_resource type="SphereMesh" id="SphereMesh_tyfif"]
+
+[sub_resource type="Curve" id="Curve_nn332"]
+_data = [Vector2(0, 0), 0.0, 0.0, 0, 0, Vector2(0.0514706, 1), 0.0, 0.0, 0, 0, Vector2(0.485294, 1), 0.0, 0.0, 0, 0, Vector2(1, 0), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_ff0li"]
+curve = SubResource("Curve_nn332")
+
+[sub_resource type="Gradient" id="Gradient_oypr0"]
+offsets = PackedFloat32Array(0, 0.209091, 0.327273, 0.490909, 1)
+colors = PackedColorArray(1, 1, 1, 1, 1, 0.935059, 0.40625, 1, 0.871094, 0.562883, 0.234787, 1, 0.429688, 0.375977, 0.428848, 1, 0, 0, 0, 1)
+
+[sub_resource type="GradientTexture1D" id="GradientTexture1D_x8mt7"]
+gradient = SubResource("Gradient_oypr0")
+
+[sub_resource type="Curve" id="Curve_swvsc"]
+_limits = [0.0, 2.11236, 0.0, 1.0]
+_data = [Vector2(0, 1.37659), 0.0, 0.0, 0, 0, Vector2(0.0882353, 1.73261), 0.0, 0.0, 0, 0, Vector2(0.852941, 2.11236), 0.0, 0.0, 0, 0, Vector2(1, 1), 0.0, 0.0, 0, 0]
+point_count = 4
+
+[sub_resource type="CurveTexture" id="CurveTexture_c3gbm"]
+curve = SubResource("Curve_swvsc")
+
+[sub_resource type="ParticleProcessMaterial" id="ParticleProcessMaterial_r4vc3"]
+particle_flag_disable_z = true
+emission_shape = 1
+emission_sphere_radius = 16.0
+angle_min = -720.0
+angle_max = 720.0
+spread = 180.0
+initial_velocity_min = 64.0
+initial_velocity_max = 64.0
+gravity = Vector3(0, 0, 0)
+damping_min = 23.61
+damping_max = 23.61
+scale_min = 0.75
+scale_curve = SubResource("CurveTexture_c3gbm")
+color_ramp = SubResource("GradientTexture1D_x8mt7")
+alpha_curve = SubResource("CurveTexture_ff0li")
+anim_speed_min = 4.0
+anim_speed_max = 4.0
+anim_offset_max = 1.0
+
+[sub_resource type="SphereMesh" id="SphereMesh_wh5bq"]
+
+[node name="Worldender" type="Area2D" node_paths=PackedStringArray("sprite")]
+modulate = Color(0.0980392, 0.0980392, 0.0980392, 0.454902)
+z_index = 1
+material = SubResource("CanvasItemMaterial_worcg")
+collision_layer = 0
+collision_mask = 49152
+monitoring = false
+monitorable = false
+script = ExtResource("1_7q7bk")
+start_height = 1000.0
+fall_speed = 330.0
+sprite = NodePath("Piano")
+
+[node name="Piano" type="Node2D" parent="."]
+scale = Vector2(4, 4)
+
+[node name="SoEinFeuerball" type="GPUParticles2D" parent="Piano"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_nn332")
+scale = Vector2(8, 8)
+amount = 64
+texture = ExtResource("4_p2tg3")
+lifetime = 1.5
+preprocess = 4.0
+local_coords = true
+process_material = SubResource("ParticleProcessMaterial_h84tc")
+
+[node name="MeshInstance2D" type="MeshInstance2D" parent="Piano/SoEinFeuerball"]
+self_modulate = Color(0.257812, 0.257812, 0.257812, 1)
+material = SubResource("CanvasItemMaterial_n210v")
+position = Vector2(1.19209e-07, 0)
+scale = Vector2(16.5119, 16.505)
+mesh = SubResource("SphereMesh_tyfif")
+
+[node name="GPUParticles2D" type="GPUParticles2D" parent="Piano"]
+z_index = 1
+material = SubResource("CanvasItemMaterial_nn332")
+scale = Vector2(0.25, 0.25)
+emitting = false
+amount = 64
+texture = ExtResource("4_p2tg3")
+lifetime = 1.5
+one_shot = true
+explosiveness = 1.0
+process_material = SubResource("ParticleProcessMaterial_r4vc3")
+
+[node name="Damage Shadow" type="MeshInstance2D" parent="."]
+modulate = Color(0.0507812, 0.0362356, 0.00178528, 1)
+z_index = 1
+scale = Vector2(2000, 998.868)
+mesh = SubResource("SphereMesh_wh5bq")

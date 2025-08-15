@@ -1,0 +1,10 @@
+[gd_resource type="StyleBoxTexture" load_steps=2 format=3 uid="uid://ckm4w2221dnvx"]
+
+[ext_resource type="Texture2D" uid="uid://cdjlehs1cqfp5" path="res://Sprites/UI/style_box_low_yellow.png" id="1_udpbw"]
+
+[resource]
+texture = ExtResource("1_udpbw")
+texture_margin_left = 16.0
+texture_margin_top = 16.0
+texture_margin_right = 16.0
+texture_margin_bottom = 16.0

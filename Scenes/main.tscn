@@ -1,0 +1,41 @@
+[gd_scene load_steps=6 format=3 uid="uid://cgenr20ixqw0d"]
+
+[ext_resource type="Script" uid="uid://cmrrfv2rnek60" path="res://Scripts/actor.gd" id="1_jjgbg"]
+[ext_resource type="PackedScene" uid="uid://c4vep52nwvdhn" path="res://Scenes/Prefabs/castle.tscn" id="2_bo1nx"]
+[ext_resource type="Resource" uid="uid://cho2lumjubng6" path="res://Resources/basic_actor_faction1.tres" id="2_jjvhh"]
+[ext_resource type="Texture2D" uid="uid://juvywyrdpun0" path="res://Sprites/Placeholder/spire-grabl.png" id="3_8gbba"]
+[ext_resource type="Resource" uid="uid://8w6120e57d8k" path="res://Resources/basic_actor_faction2.tres" id="3_kry3j"]
+
+[node name="Main" type="Node2D"]
+
+[node name="Faction1" type="Node" parent="." node_paths=PackedStringArray("castle", "enemy")]
+script = ExtResource("1_jjgbg")
+castle = NodePath("../Castle1")
+settings = ExtResource("2_jjvhh")
+enemy = NodePath("../Faction2")
+unit_layer = 16384
+metadata/_custom_type_script = "uid://cmrrfv2rnek60"
+
+[node name="Faction2" type="Node" parent="." node_paths=PackedStringArray("castle", "enemy")]
+script = ExtResource("1_jjgbg")
+castle = NodePath("../Castle2")
+settings = ExtResource("3_kry3j")
+enemy = NodePath("../Faction1")
+unit_layer = 32768
+metadata/_custom_type_script = "uid://cmrrfv2rnek60"
+
+[node name="Castle1" parent="." instance=ExtResource("2_bo1nx")]
+position = Vector2(663, 565)
+
+[node name="Area2D" parent="Castle1" index="1"]
+collision_layer = 16384
+
+[node name="Castle2" parent="." instance=ExtResource("2_bo1nx")]
+position = Vector2(1098, 584)
+
+[node name="Sprite2D" parent="Castle2" index="0"]
+position = Vector2(1, 0)
+texture = ExtResource("3_8gbba")
+
+[editable path="Castle1"]
+[editable path="Castle2"]

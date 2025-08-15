@@ -1,0 +1,33 @@
+[gd_scene load_steps=4 format=3 uid="uid://bp1ud556vcbau"]
+
+[ext_resource type="Script" uid="uid://cyrn8hs1voo86" path="res://Scripts/resource_depot.gd" id="1_v6408"]
+[ext_resource type="Texture2D" uid="uid://lpisnxqthsrm" path="res://Sprites/environment/meth_crystal.png" id="2_v6408"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_mjiw5"]
+resource_local_to_scene = true
+radius = 60.65
+
+[node name="ResourceDepot" type="Node2D" node_paths=PackedStringArray("controlled_by_indicator")]
+script = ExtResource("1_v6408")
+controlled_by_indicator = NodePath("ControlledByIndicator")
+metadata/_custom_type_script = "uid://cyrn8hs1voo86"
+
+[node name="Area2D" type="Area2D" parent="."]
+position = Vector2(0, -8)
+collision_layer = 0
+collision_mask = 49152
+monitorable = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
+shape = SubResource("CircleShape2D_mjiw5")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = ExtResource("2_v6408")
+offset = Vector2(0, -10)
+
+[node name="ControlledByIndicator" type="ColorRect" parent="."]
+z_index = 100
+offset_left = -4.0
+offset_top = -35.0
+offset_right = 4.0
+offset_bottom = -27.0

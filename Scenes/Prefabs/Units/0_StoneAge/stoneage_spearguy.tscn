@@ -1,0 +1,32 @@
+[gd_scene load_steps=6 format=3 uid="uid://87pxv18vclv0"]
+
+[ext_resource type="PackedScene" uid="uid://dt5k578j6xqvr" path="res://Scenes/Prefabs/unit_base.tscn" id="1_daq6i"]
+[ext_resource type="Script" uid="uid://daxxrpgr4e0bg" path="res://Scripts/batallion_move.gd" id="2_milfa"]
+[ext_resource type="Script" uid="uid://dc48tdo3onsfq" path="res://Scripts/ranged_attack_projectile.gd" id="3_xpdiq"]
+[ext_resource type="PackedScene" uid="uid://u72p178p52fi" path="res://Scenes/Prefabs/Units/0_StoneAge/stoneage_spearguy_projectile.tscn" id="4_qvi5t"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_wic18"]
+radius = 53.3385
+
+[node name="RangedGuy" instance=ExtResource("1_daq6i")]
+
+[node name="Sprite2D" parent="." index="1"]
+region_rect = Rect2(0, 17, 64, 16)
+
+[node name="BatallionMove" type="Node2D" parent="." index="2"]
+script = ExtResource("2_milfa")
+metadata/_custom_type_script = "uid://daxxrpgr4e0bg"
+
+[node name="RangedAttackHitscan" type="Area2D" parent="." index="3"]
+collision_layer = 0
+collision_mask = 32769
+monitoring = false
+monitorable = false
+script = ExtResource("3_xpdiq")
+attack_interval = 1.0
+projectile_prefab = ExtResource("4_qvi5t")
+attack_range = 5.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="RangedAttackHitscan" index="0"]
+position = Vector2(40, 0)
+shape = SubResource("CircleShape2D_wic18")
